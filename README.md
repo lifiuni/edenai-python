@@ -12,13 +12,12 @@ This is the official Eden AI Python Github for interacting with our powerful API
 
 
 Eden AI simplifies the use and integration of AI technologies by providing a unique API connected to the best AI engines and combined with a powerful management platform. The platform covers a wide range of AI technologies:
-
-    Vision: www.edenai.co/vision
-    Text & NLP: www.edenai.co/text
-    Speech & Audio: www.edenai.co/speech
-    OCR: www.edenai.co/ocr
-    Machine Translation: www.edenai.co/translation
-    Prediction: www.edenai.co/prediction
+* Vision: www.edenai.co/vision
+* Text & NLP: www.edenai.co/text
+* Speech & Audio: www.edenai.co/speech
+* OCR: www.edenai.co/ocr
+* Machine Translation: www.edenai.co/translation
+* Prediction: www.edenai.co/prediction
 
 For all the proposed technologies, we provide a single endpoint: the service provider is only a parameter that can be changed very easily. All the engines available on Eden AI are listed here: www.edenai.co/catalog
 
