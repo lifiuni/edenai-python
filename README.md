@@ -1,6 +1,6 @@
 # Eden AI Python
 
-![Screenshot]
+![Screenshot](https://github.com/edenai/edenai-python/blob/3829feb170f11cfd55aacd877d23c5f8d69e203f/Logo%20complet%20Eden%20AI%20-%20format%20PNG.png)
 
 Eden AI support: contact@edenai.co              URL: https://www.edenai.co
 
