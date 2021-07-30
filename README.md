@@ -2,7 +2,13 @@
 
 ![Screenshot](https://github.com/edenai/edenai-python/blob/3829feb170f11cfd55aacd877d23c5f8d69e203f/Logo%20complet%20Eden%20AI%20-%20format%20PNG.png)
 
-Eden AI support: contact@edenai.co              URL: https://www.edenai.co
+
+This is the official Eden AI Python Github for interacting with our powerful APIs. [Eden AI](https://www.edanai.co/) is a SaaS providing APIs connected to big (AWS, GCP, etc.) and small AI providers for vision, text, audio, OCR, prediction and translation AI engines. Our solution allows users to compare the performance of these providers APIs according to their data and use them directly via our API thus offering great flexibility and making it very easy to change supplier. In particular, we offer better performance with the "Genius" feature that cleverly combines results from multiple providers.
+
+*Eden AI support: contact@edenai.co              
+*Look to our website: https://www.edenai.co
+*Sign Iup for a free account: https://app.edenai.run/user/login
+*Read our documentation: https://api.edenai.run/v1/redoc/
 
 
 Eden AI simplifies the use and integration of AI technologies by providing a unique API connected to the best AI engines and combined with a powerful management platform. The platform covers a wide range of AI technologies:
