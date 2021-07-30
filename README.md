@@ -29,14 +29,16 @@ import requests
 headers = {  'Authorization': 'Bearer your API Key'}
 ```
 
-1- Support
+## Support & Community
 
 If you have any problems, please contact us at this email address: contact@edenai.co. We will be happy to help you in the use of Eden AI.
-2- Community
 
+Community:
 You can interact personally with other people actively using and working with Eden AI and join our Slack community.
-
 We are always updating our docs, so a good way to always stay up to date is to watch our documentation repo on Github: github.com/edenai
-3- Blog
 
+Blog:
 We also regularly publish various articles with Eden AI news and technical articles on the different AI engines that exist. You can find these articles here: edenai.co/blog
+
+## Documentation
+To have more information about platform and API use, you can check ou our documentation(https://api.edenai.run/v1/redoc/)
