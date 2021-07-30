@@ -1,4 +1,6 @@
-# edenai-api
+# Eden AI Python
+
+![Screenshot]
 
 Eden AI support: contact@edenai.co              URL: https://www.edenai.co
 
