@@ -29,6 +29,23 @@ import requests
 headers = {  'Authorization': 'Bearer your API Key'}
 ```
 
+## Usage
+### Initialization
+Select your API endpoint:
+```python
+url = 'https://api.edenai.run/v1/pretrained/+ endpoint'
+```
+### Select parameters 
+Set parameters corresponding to the API, and providers APIs you want to run :
+```python
+payload = {'providers': '[\'ibm\', \'microsoft\', \'aws\', \'google_cloud\']','text':'I am happy today', 'languages_to_find': 'en'}
+```
+### Get results
+```python
+response = requests.request("POST", url, headers=headers, data = payload)
+print(response.text.encode('utf8'))
+```
+
 ## Support & Community
 
 If you have any problems, please contact us at this email address: contact@edenai.co. We will be happy to help you in the use of Eden AI.
