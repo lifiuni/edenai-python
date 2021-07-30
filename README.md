@@ -21,6 +21,14 @@ Eden AI simplifies the use and integration of AI technologies by providing a uni
 
 For all the proposed technologies, we provide a single endpoint: the service provider is only a parameter that can be changed very easily. All the engines available on Eden AI are listed here: www.edenai.co/catalog
 
+## Getting started
+To start using Eden AI APIs, you first need to get your API Token.  You can get your token on your IAM [here](https://app.edenai.run/admin/account).
+Enter your access token:
+```python
+import requests
+headers = {  'Authorization': 'Bearer your API Key'}
+```
+
 1- Support
 
 If you have any problems, please contact us at this email address: contact@edenai.co. We will be happy to help you in the use of Eden AI.
