@@ -9,7 +9,7 @@ headers = {'Authorization': 'Bearer your API Key'}
 url = 'https://api.edenai.run/v1/pretrained/vision/ocr'
 
 # Select providers, and text to detect
-payload = {'providers': '[\'ocr_space\', \'microsoft\', \'aws\', \'google_cloud\']','text_reference': '','language': 'French'}
+payload = {'providers': '[\'ocrspace\', \'microsoft\', \'aws\', \'google\']','text_reference': '','language': 'French'}
 
 # Select file to test
 files = [  ('files', open('Picture/example.jpg','rb'))]
