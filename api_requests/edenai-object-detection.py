@@ -9,7 +9,7 @@ headers = {  'Authorization': 'Bearer your API Key'}
 url = 'https://api.edenai.run/v1/pretrained/vision/object_detection'
 
 # Select providers, and objects to detect
-payload = {'providers': '[\'google_cloud\', \'microsoft\', \'aws\', \'ibm\']','objects_to_find': ''}
+payload = {'providers': '[\'google\', \'microsoft\', \'aws\', \'ibm\']','objects_to_find': ''}
 
 # Select file to test
 files = [  ('files', open('Picture/example.jpg','rb'))]
