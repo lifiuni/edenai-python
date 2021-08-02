@@ -9,7 +9,7 @@ headers = {'Authorization': 'Bearer your API Key'} #You can get your free API to
 url = 'https://api.edenai.run/v1/pretrained/audio/text_to_speech'
 
 # Select providers, and audio to transcribe
-payload = {'providers':'[\'ibm\', \'microsoft\', \'aws\', \'google_cloud\']','text':'Hi, my name is Martin','language':'en-US', 'option':'MALE'}
+payload = {'providers':'[\'ibm\', \'microsoft\', \'aws\', \'google\']','text':'Hi, my name is Martin','language':'en-US', 'option':'MALE'}
 
 # Request to Eden AI
 response = requests.request("POST", url, headers=headers, data = payload)
