@@ -9,7 +9,7 @@ headers = {  'Authorization': 'Bearer your API Key'} #You can get your free API 
 url = 'https://api.edenai.run/v1/pretrained/vision/face_detection'
 
 # Select providers
-payload = {'providers': '[\'google_cloud\', \'microsoft\', \'aws\']'}
+payload = {'providers': '[\'google\', \'microsoft\', \'aws\']'}
 
 # Select file to test
 files = [  ('files', open('Picture/example.jpg','rb'))]
