@@ -9,7 +9,7 @@ headers = {'Authorization': 'Bearer your API Key'}
 url = 'https://api.edenai.run/v1/pretrained/text/sentiment_analysis'
 
 # Select providers, and text to analyze
-payload = {'providers': '[\'google_cloud\', \'microsoft\', \'aws\', \'ibm\']','text':'I am angry today', 'sentiments_to_find': 'neutral','language': 'en-US'}
+payload = {'providers': '[\'google\', \'microsoft\', \'aws\', \'ibm\']','text':'I am angry today', 'sentiments_to_find': 'neutral','language': 'en-US'}
 
 # Request to Eden AI
 response = requests.request("POST", url, headers=headers, data = payload, files = files)
