@@ -39,7 +39,7 @@ url = 'https://api.edenai.run/v1/pretrained/+ endpoint'
 Set parameters corresponding to the API, and providers APIs you want to run :
 Example:
 ```python
-payload = {'providers': '[\'ibm\', \'microsoft\', \'aws\', \'google_cloud\']','text':'I am happy today', 'languages_to_find': 'en'}
+payload = {'providers': '[\'ibm\', \'microsoft\', \'aws\', \'google\']','text':'I am happy today', 'languages_to_find': 'en'}
 ```
 ### Get results
 ```python
