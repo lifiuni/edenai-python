@@ -9,7 +9,7 @@ headers = {  'Authorization': 'Bearer your API Key'}
 url = 'https://api.edenai.run/v1/pretrained/vision/explicit_content_detection'
 
 # Select providers
-payload = {'providers': '[\'google_cloud\', \'microsoft\', \'aws\', \'ibm\']'}
+payload = {'providers': '[\'google\', \'microsoft\', \'aws\', \'ibm\']'}
 
 # Select file to test
 files = [  ('files', open('Picture/example.jpg','rb'))]
