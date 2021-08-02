@@ -9,7 +9,7 @@ headers = {'Authorization': 'Bearer your API Key'}
 url = 'https://api.edenai.run/v1/pretrained/text/syntax_analysis'
 
 # Select providers, and language
-payload = {'providers': '[\'google_cloud\', \'aws\', \'ibm\']','text':'I am angry today','language': 'en-US'}
+payload = {'providers': '[\'google\', \'aws\', \'ibm\']','text':'I am angry today','language': 'en-US'}
 
 # Request to Eden AI
 response = requests.request("POST", url, headers=headers, data = payload, files = files)
