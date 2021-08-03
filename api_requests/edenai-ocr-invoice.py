@@ -9,7 +9,7 @@ headers = {  'Authorization': 'Bearer your API Key'}
 url = 'https://api.edenai.run/v1/pretrained/vision/ocr_invoice'
 
 # Select providers
-payload = {'providers': '[\'google\', \'microsoft\', \'aws\']','language': 'en-US'}
+payload = {'providers': '[\'mindee\', \'microsoft\']','language': 'en-US'}
 
 # Select file to test
 files = [  ('files', open('Picture/example.jpg','rb'))]
