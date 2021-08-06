@@ -5,7 +5,13 @@ Base class for all API calls
 
 
 class ApiBase:
-    """Base class for all API calls"""
+    """Base class for all API calls
+
+    >>> class A(ApiBase):
+    ...     def __init__(api_key, *args, **kwargs):
+    ...         super().__init__(api_key, *args, **kwargs)
+
+    """
 
     base_url = "https://api.edenai.run/v1/pretrained/{}"
 
