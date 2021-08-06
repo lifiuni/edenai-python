@@ -2,10 +2,10 @@
 
 ## Setup
 1.  Create a virtualenv
-2. Install `edenai-python` in editable mode along with dev dependencies:
+2.  Install `edenai-python` in editable mode along with dev dependencies:
 
-    pip install -e ".[dev]"
-    
+        pip install -e ".[dev]"
+
 ## Running tests
 To run the full test suite:
 
