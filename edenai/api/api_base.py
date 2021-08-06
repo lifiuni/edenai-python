@@ -2,6 +2,7 @@
 """
 Base class for all API calls
 """
+from typing import Dict
 
 
 class ApiBase:
@@ -10,6 +11,9 @@ class ApiBase:
     >>> class A(ApiBase):
     ...     def __init__(api_key, *args, **kwargs):
     ...         super().__init__(api_key, *args, **kwargs)
+    ...
+    ...     def foo(self):
+    ...         endpoint_url = self.base_url.format('endpoint')
 
     """
 
@@ -39,3 +43,11 @@ class ApiBase:
         :returns: None
         """
         self._api_key = api_key
+
+    @property
+    def post_headers(self) -> Dict[str, str]:
+        """Headers for the POST API requests
+
+        :returns: Dict object with strings as keys and values
+        """
+        return {"Authorization": self.api_key}
