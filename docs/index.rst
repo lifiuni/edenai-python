@@ -7,8 +7,21 @@ Welcome to edenai-python's documentation!
 =========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
+
+   index
+
+
+API
+====
+
+ApiBase
+--------
+.. autoclass:: edenai.api.api_base.ApiBase
+   :members:
+
+   .. automethod:: __init__
 
 
 
