@@ -4,7 +4,7 @@ develop:
 
 .PHONY: test
 test:
-	coverage run -m --source='short_news' py.test
+	coverage run -m --source='edenai' py.test
 	coverage report
 
 .PHONY: docs

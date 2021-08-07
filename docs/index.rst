@@ -23,7 +23,10 @@ ApiBase
 
    .. automethod:: __init__
 
-
+Text
+-----
+.. autoclass:: edenai.api.text_api.Text
+   :members:
 
 Indices and tables
 ==================
