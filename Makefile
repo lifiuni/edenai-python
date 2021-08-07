@@ -2,10 +2,15 @@
 develop:
 	pip install -e '.[dev]'
 
+.PHONY: test-local
+test-local:
+	python -m pytest --skip_internet_tests
+
 .PHONY: test
 test:
 	coverage run -m --source='edenai' py.test
 	coverage report
+
 
 .PHONY: docs
 docs:

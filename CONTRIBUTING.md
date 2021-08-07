@@ -20,6 +20,10 @@ For example:
 
     pytest test/test_folder/test_module.py
     
+To run test cases without Internet access:
+
+    make test-local
+    
     
 ## Building docs
 
