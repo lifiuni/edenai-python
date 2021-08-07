@@ -9,8 +9,8 @@ class ApiBase:
     """Base class for all API calls
 
     >>> class A(ApiBase):
-    ...     def __init__(api_key, *args, **kwargs):
-    ...         super().__init__(api_key, *args, **kwargs)
+    ...     def __init__(api_key):
+    ...         super().__init__(api_key)
     ...
     ...     def foo(self):
     ...         endpoint_url = self.base_url.format('endpoint')
@@ -18,8 +18,10 @@ class ApiBase:
     """
 
     base_url = "https://api.edenai.run/v1/pretrained/{}"
+    requests_timeout = 0.5  # timeout for network requests
+    endpoints = {}
 
-    def __init__(self, api_key: str, *args, **kwargs) -> None:
+    def __init__(self, api_key: str) -> None:
         """ApiBase class initialisation
 
         :param str api_key: Your API key, see https://api.edenai.run/v1/redoc/
@@ -51,3 +53,13 @@ class ApiBase:
         :returns: Dict object with strings as keys and values
         """
         return {"Authorization": self.api_key}
+
+    def get_endpoint_url(self, endpoint_name: str):
+        """Returning endpoint URL by endpoint name
+
+        :param str endpoint_name: endpoint name, e.g. ner or sentiment_analysys
+        """
+        try:
+            return self.base_url.format(self.endpoints[endpoint_name])
+        except KeyError:
+            raise KeyError("Unknown endpoint name: {}".format(endpoint_name))
