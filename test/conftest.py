@@ -37,14 +37,8 @@ def pytest_configure(config):
 
 def pytest_collection_modifyitems(config, items):
     for marker, info in optional_markers.items():
-        print(30 * ">")
-        print(config.getoption("--{}".format(marker)))
-        print(30 * "<")
         if not config.getoption("--{}".format(marker)):
             skip_test = pytest.mark.skip(reason=info["skip-reason"].format(marker))
-            print(30 * ">")
-            print(skip_test)
-            print(30 * "<")
             for item in items:
                 if marker in item.keywords:
                     item.add_marker(skip_test)

@@ -24,6 +24,7 @@ EXTRAS_DEV_DOCS = [
     "sphinx-rtd-theme>=0.5.2",
     "pytest",
     "coverage",
+    "python-dotenv",
 ]
 
 setup(

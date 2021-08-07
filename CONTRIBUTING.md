@@ -24,6 +24,9 @@ To run test cases without Internet access:
 
     make test-local
     
+## API KEY
+Some of the tests require the API key. Please create .env file in the edenai-python folder and save API_KEY variable.
+    
     
 ## Building docs
 
