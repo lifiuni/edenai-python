@@ -25,3 +25,7 @@ def test_endpoints(api: Text):
         api.get_endpoint_url("syntax_analysis")
         == "https://api.edenai.run/v1/pretrained/text/syntax_analysis"
     )
+    assert (
+        api.get_endpoint_url("keyword_extraction")
+        == "https://api.edenai.run/v1/pretrained/text/keyword_extraction"
+    )
