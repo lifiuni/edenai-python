@@ -44,11 +44,9 @@ class Text(ApiBase):
             providers=["amazon", "ibm"],
             text="I am angry today",
             entities_to_find="",
-            language="en-US"
+            language="en-US")
 
-        )
-
-        :param str entities_to_find: Entities to find [ 1 .. 1000 ] characters
+        :param str entities_to_find: Entities expected
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
         :param str text: Text to analyze
@@ -71,6 +69,68 @@ class Text(ApiBase):
 
         for i in response:
             provider = i.get("solution_name")
-            result[provider] = (i.get("entities", []), i.get("importances", []))
+            js_result = i.get("result", {})
+            result[provider] = (
+                js_result.get("entities", []),
+                js_result.get("importances", []),
+            )
+
+        return result
+
+    def sentiment_analysys(
+        self,
+        sentiments_to_find: str,
+        language: str,
+        text: str,
+        providers: List[str],
+        fake_call: bool = True,
+    ) -> Dict[str, Tuple[List, List]]:
+        """Sentiment analysis API extracts sentiment in a given string of text.
+        Sentiment analysis, also called 'opinion mining', uses natural language
+        processing, text analysis and computational linguistics to identify and
+        detect subjective information from the input text.
+
+        https://api.edenai.run/v1/redoc/#operation/Sentiment%20Analysis
+
+        >>> from edenai import Text
+        >>> nlp_apis = Text('<your_api_key'>)
+        >>> result = nlp_apis.sentiment_analysys(
+            providers=["amazon", "ibm"],
+            text="I am angry today",
+            sentiments_to_find="neutral",
+            language="en-US")
+
+        :param str sentiments_to_find: Sentiment expected
+        :param str language: Language codec of text (ex: fr-FR (French),
+            en-US (English), es-ES (Spanish))
+        :param str text: Text to analyze
+        :param list(str) providers: Providers, non-empty Provider to compare
+            (ex: ['amazon', 'microsoft', 'ibm','google'])
+        :param bool fake_call: boolean (Fake call), default: True
+        :returns: dictionary of tuples {"google" : ([sentiments], [sentiment_rate]), "microsoft" : ([sentiments], [sentiment_rate]), …}
+        """
+        payload = {
+            "providers": providers,
+            "text": text,
+            "sentiments_to_find": sentiments_to_find,
+            "language": language,
+            "fake_call": fake_call,
+        }
+
+        response = post(
+            url=self.get_endpoint_url("sentiment_analysys"),
+            headers=self.post_headers,
+            payload=payload,
+        ).json()
+
+        result = {}
+
+        for i in response:
+            provider = i.get("solution_name")
+            js_result = i.get("result", {})
+            result[provider] = (
+                js_result.get("sentiments", []),
+                js_result.get("sentiment_rate", []),
+            )
 
         return result
