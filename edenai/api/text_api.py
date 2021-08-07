@@ -182,3 +182,60 @@ class Text(ApiBase):
             result[provider] = js_result
 
         return result
+
+    def keyword_extraction(
+        self,
+        keywords_to_find: str,
+        language: str,
+        text: str,
+        providers: List[str],
+        fake_call: bool = True,
+    ) -> Dict[str, Dict[str, Any]]:
+        """Keyword extraction (also known as keyword detection or keyword analysis)
+        is a text analysis technique that consists of automatically extracting
+        the most important words and expressions in a text.
+
+        https://api.edenai.run/v1/redoc/#operation/Keyword%20Extraction
+
+        >>> from edenai import Text
+        >>> nlp_apis = Text('<your_api_key'>)
+        >>> result = nlp_apis.keyword_extraction(
+            keywords_to_find='neutral',
+            providers=["amazon", "ibm"],
+            text="I am angry today",
+            language="en-US")
+
+        :param str keywords_to_find: Keyword expected
+        :param str language: Language codec of text (ex: fr-FR (French),
+            en-US (English), es-ES (Spanish))
+        :param str text: Text to analyze
+        :param list(str) providers: Providers, non-empty Provider to compare
+            (ex: ['amazon', 'microsoft', 'ibm','google'])
+        :param bool fake_call: boolean (Fake call), default: True
+        :returns: dictionary of tuples {"google" : ([keywords], [importances]), "microsoft" : ([keywords], [importances]), …}
+        """
+        payload = {
+            "keywords_to_find": keywords_to_find,
+            "providers": providers,
+            "text": text,
+            "language": language,
+            "fake_call": fake_call,
+        }
+
+        response = post(
+            url=self.get_endpoint_url("keyword_extraction"),
+            headers=self.post_headers,
+            payload=payload,
+        ).json()
+
+        result = {}
+
+        for i in response:
+            provider = i.get("solution_name")
+            js_result = i.get("result", {})
+            result[provider] = (
+                js_result.get("keywords", []),
+                js_result.get("importances", []),
+            )
+
+        return result
