@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Endpoints for the Text API"""
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 from edenai.utils.httpx_requests import post
 
@@ -132,5 +132,53 @@ class Text(ApiBase):
                 js_result.get("sentiments", []),
                 js_result.get("sentiment_rate", []),
             )
+
+        return result
+
+    def syntax_analysys(
+        self,
+        language: str,
+        text: str,
+        providers: List[str],
+        fake_call: bool = True,
+    ) -> Dict[str, Dict[str, Any]]:
+        """Syntax analysis consists principaly in highlighting the structure of a text.
+
+        https://api.edenai.run/v1/redoc/#operation/Syntax%20Analysis
+
+        >>> from edenai import Text
+        >>> nlp_apis = Text('<your_api_key'>)
+        >>> result = nlp_apis.syntax_analysys(
+            providers=["amazon", "ibm"],
+            text="I am angry today",
+            language="en-US")
+
+        :param str language: Language codec of text (ex: fr-FR (French),
+            en-US (English), es-ES (Spanish))
+        :param str text: Text to analyze
+        :param list(str) providers: Providers, non-empty Provider to compare
+            (ex: ['amazon', 'microsoft', 'ibm','google'])
+        :param bool fake_call: boolean (Fake call), default: True
+        :returns: dictionary of tuples {"google" : (result), "microsoft" : (result), …}
+        """
+        payload = {
+            "providers": providers,
+            "text": text,
+            "language": language,
+            "fake_call": fake_call,
+        }
+
+        response = post(
+            url=self.get_endpoint_url("syntax_analysys"),
+            headers=self.post_headers,
+            payload=payload,
+        ).json()
+
+        result = {}
+
+        for i in response:
+            provider = i.get("solution_name")
+            js_result = i.get("result", {})
+            result[provider] = js_result
 
         return result
