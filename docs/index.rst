@@ -28,6 +28,12 @@ Text
 .. autoclass:: edenai.api.text_api.Text
    :members:
 
+Utils
+======
+httpx post request
+-------------------
+.. autofunction:: edenai.utils.httpx_requests.post
+
 Indices and tables
 ==================
 
