@@ -41,10 +41,10 @@ class Text(ApiBase):
         >>> from edenai import Text
         >>> nlp_apis = Text('<your_api_key'>)
         >>> result = nlp_apis.ner(
-            providers=["amazon", "ibm"],
-            text="I am angry today",
-            entities_to_find="",
-            language="en-US")
+        ...    providers=["amazon", "ibm"],
+        ...    text="I am angry today",
+        ...    entities_to_find="",
+        ...    language="en-US")
 
         :param str entities_to_find: Entities expected
         :param str language: Language codec of text (ex: fr-FR (French),
@@ -95,10 +95,10 @@ class Text(ApiBase):
         >>> from edenai import Text
         >>> nlp_apis = Text('<your_api_key'>)
         >>> result = nlp_apis.sentiment_analysys(
-            providers=["amazon", "ibm"],
-            text="I am angry today",
-            sentiments_to_find="neutral",
-            language="en-US")
+        ...    providers=["amazon", "ibm"],
+        ...    text="I am angry today",
+        ...    sentiments_to_find="neutral",
+        ...    language="en-US")
 
         :param str sentiments_to_find: Sentiment expected
         :param str language: Language codec of text (ex: fr-FR (French),
@@ -149,9 +149,9 @@ class Text(ApiBase):
         >>> from edenai import Text
         >>> nlp_apis = Text('<your_api_key'>)
         >>> result = nlp_apis.syntax_analysys(
-            providers=["amazon", "ibm"],
-            text="I am angry today",
-            language="en-US")
+        ...    providers=["amazon", "ibm"],
+        ...    text="I am angry today",
+        ...    language="en-US")
 
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
@@ -200,10 +200,10 @@ class Text(ApiBase):
         >>> from edenai import Text
         >>> nlp_apis = Text('<your_api_key'>)
         >>> result = nlp_apis.keyword_extraction(
-            keywords_to_find='neutral',
-            providers=["amazon", "ibm"],
-            text="I am angry today",
-            language="en-US")
+        ...    keywords_to_find='neutral',
+        ...    providers=["amazon", "ibm"],
+        ...    text="I am angry today",
+        ...    language="en-US")
 
         :param str keywords_to_find: Keyword expected
         :param str language: Language codec of text (ex: fr-FR (French),
