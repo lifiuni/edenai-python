@@ -21,7 +21,10 @@ optional_markers = {
 def pytest_addoption(parser):
     for marker, info in optional_markers.items():
         parser.addoption(
-            "--{}".format(marker), action="store_true", default=True, help=info["help"]
+            "--{}".format(marker),
+            action="store_false",
+            default=True,
+            help=info["help"],
         )
 
 
@@ -34,8 +37,14 @@ def pytest_configure(config):
 
 def pytest_collection_modifyitems(config, items):
     for marker, info in optional_markers.items():
-        if config.getoption("--{}".format(marker)):
+        print(30 * ">")
+        print(config.getoption("--{}".format(marker)))
+        print(30 * "<")
+        if not config.getoption("--{}".format(marker)):
             skip_test = pytest.mark.skip(reason=info["skip-reason"].format(marker))
+            print(30 * ">")
+            print(skip_test)
+            print(30 * "<")
             for item in items:
                 if marker in item.keywords:
                     item.add_marker(skip_test)
