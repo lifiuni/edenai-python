@@ -12,6 +12,11 @@ def api():
     return Text(get_api_key())
 
 
+@pytest.fixture
+def api_wrong():
+    return Text("123")
+
+
 @pytest.mark.parametrize(
     "test_input,expected",
     [
@@ -82,3 +87,47 @@ def test_keyword_extraction(api: Text):
 
     assert len(result["Amazon Web Services"][0]) > 0
     assert len(result["Amazon Web Services"][1]) > 0
+
+
+@pytest.mark.skip_internet_tests
+def test_ner_error(api_wrong: Text):
+    result = api_wrong.ner(
+        providers=["amazon", "ibm"],
+        text="I am angry today and will angry tomorrow, and also on the next week",
+        entities_to_find="",
+        language="en-US",
+    )
+
+    assert "errors" in result
+
+
+@pytest.mark.skip_internet_tests
+def test_sentiment_analysys_error(api_wrong: Text):
+    result = api_wrong.sentiment_analysys(
+        providers=["amazon", "ibm"],
+        text="I am angry today and will angry tomorrow, and also on the next week",
+        language="en-US",
+        sentiments_to_find=["neutral"],
+    )
+    assert "errors" in result
+
+
+@pytest.mark.skip_internet_tests
+def test_syntax_analysys_error(api_wrong: Text):
+    result = api_wrong.syntax_analysys(
+        providers=["amazon", "ibm"],
+        text="I am angry today and will angry tomorrow, and also on the next week",
+        language="en-US",
+    )
+    assert "errors" in result
+
+
+@pytest.mark.skip_internet_tests
+def test_keyword_extraction_error(api_wrong: Text):
+    result = api_wrong.keyword_extraction(
+        keywords_to_find=["neutral"],
+        providers=["amazon", "ibm"],
+        text="I am angry today and will angry tomorrow, and also on the next week",
+        language="en-US",
+    )
+    assert "errors" in result

@@ -65,9 +65,14 @@ class Text(ApiBase):
             url=self.get_endpoint_url("ner"), headers=self.post_headers, payload=payload
         ).json()
 
+        try:
+            results = response["result"]
+        except KeyError:
+            return response
+
         result = {}
 
-        for i in response["result"]:
+        for i in results:
             provider = i.get("solution_name")
             js_result = i.get("result", {})
             result[provider] = (
@@ -123,9 +128,14 @@ class Text(ApiBase):
             payload=payload,
         ).json()
 
+        try:
+            results = response["result"]
+        except KeyError:
+            return response
+
         result = {}
 
-        for i in response["result"]:
+        for i in results:
             provider = i.get("solution_name")
             js_result = i.get("result", {})
             result[provider] = (
@@ -174,9 +184,14 @@ class Text(ApiBase):
             payload=payload,
         ).json()
 
+        try:
+            results = response["result"]
+        except KeyError:
+            return response
+
         result = {}
 
-        for i in response["result"]:
+        for i in results:
             provider = i.get("solution_name")
             js_result = i.get("result", {})
             result[provider] = js_result
@@ -228,9 +243,14 @@ class Text(ApiBase):
             payload=payload,
         ).json()
 
+        try:
+            results = response["result"]
+        except KeyError:
+            return response
+
         result = {}
 
-        for i in response["result"]:
+        for i in results:
             provider = i.get("solution_name")
             js_result = i.get("result", {})
             result[provider] = (
