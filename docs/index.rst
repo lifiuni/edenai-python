@@ -38,6 +38,12 @@ Audio
 .. autoclass:: edenai.api.audio_api.Audio
    :members:
 
+
+Translation
+------------
+.. autoclass:: edenai.api.translation_api.Translation
+   :members:
+
 Utils
 ======
 httpx post request
