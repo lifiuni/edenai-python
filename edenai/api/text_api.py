@@ -2,7 +2,7 @@
 """Endpoints for the Text API"""
 from typing import Any, Dict, List, Tuple
 
-from edenai.utils.httpx_requests import post
+from edenai.utils.api_requests import post
 
 from .api_base import ApiBase
 

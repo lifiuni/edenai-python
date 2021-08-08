@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any, Dict, Union
 
-import httpx
+import requests
 
 
 def post(
@@ -12,8 +12,8 @@ def post(
     headers: Dict[str, str],
     payload: Dict[str, Any],
     files: Union[str, Path] = None,
-) -> httpx.Response:
-    """POST requests via sync httpx
+) -> requests.Response:
+    """POST requests via requests library
 
     :param str url: endpoint url
     :param dict headers: headers for the request
@@ -23,10 +23,10 @@ def post(
 
     """
     files = _get_files_for_httpx_upload(files)
-    return httpx.post(url, headers=headers, data=payload)
+    return requests.post(url, headers=headers, data=payload, files=files)
 
 
 def _get_files_for_httpx_upload(files):
     if files is None:
         return None
-    return {"upload-file": open(files, "rb")}
+    return [("files", open(files, "rb"))]
