@@ -56,7 +56,6 @@ class Vision(ApiBase):
             payload={"providers": str(providers)},
             files=file,
         ).json()
-        print(response)
 
         result = {}
 

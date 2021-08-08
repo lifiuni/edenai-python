@@ -88,7 +88,6 @@ class Text(ApiBase):
         language: str,
         text: str,
         providers: List[str],
-        fake_call: bool = True,
     ) -> Dict[str, Tuple[List, List]]:
         """Sentiment analysis API extracts sentiment in a given string of text.
         Sentiment analysis, also called 'opinion mining', uses natural language
@@ -111,7 +110,6 @@ class Text(ApiBase):
         :param str text: Text to analyze
         :param list(str) providers: Providers, non-empty Provider to compare
             (ex: ['amazon', 'microsoft', 'ibm','google'])
-        :param bool fake_call: boolean (Fake call), default: True
         :returns: dictionary of tuples {"google" : ([sentiments], [sentiment_rate]), "microsoft" : ([sentiments], [sentiment_rate]), …}
         """
         payload = {
@@ -119,7 +117,6 @@ class Text(ApiBase):
             "text": text,
             "sentiments_to_find": str(sentiments_to_find),
             "language": language,
-            "fake_call": fake_call,
         }
 
         response = post(
@@ -150,7 +147,6 @@ class Text(ApiBase):
         language: str,
         text: str,
         providers: List[str],
-        fake_call: bool = True,
     ) -> Dict[str, Dict[str, Any]]:
         """Syntax analysis consists principaly in highlighting the structure of a text.
 
@@ -168,14 +164,12 @@ class Text(ApiBase):
         :param str text: Text to analyze
         :param list(str) providers: Providers, non-empty Provider to compare
             (ex: ['amazon', 'microsoft', 'ibm','google'])
-        :param bool fake_call: boolean (Fake call), default: True
         :returns: dictionary of tuples {"google" : (result), "microsoft" : (result), …}
         """
         payload = {
             "providers": str(providers),
             "text": text,
             "language": language,
-            "fake_call": fake_call,
         }
 
         response = post(
@@ -204,7 +198,6 @@ class Text(ApiBase):
         language: str,
         text: str,
         providers: List[str],
-        fake_call: bool = True,
     ) -> Dict[str, Dict[str, Any]]:
         """Keyword extraction (also known as keyword detection or keyword analysis)
         is a text analysis technique that consists of automatically extracting
@@ -226,7 +219,6 @@ class Text(ApiBase):
         :param str text: Text to analyze
         :param list(str) providers: Providers, non-empty Provider to compare
             (ex: ['amazon', 'microsoft', 'ibm','google'])
-        :param bool fake_call: boolean (Fake call), default: True
         :returns: dictionary of tuples {"google" : ([keywords], [importances]), "microsoft" : ([keywords], [importances]), …}
         """
         payload = {
@@ -234,7 +226,6 @@ class Text(ApiBase):
             "providers": str(providers),
             "text": text,
             "language": language,
-            "fake_call": fake_call,
         }
 
         response = post(
