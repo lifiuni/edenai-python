@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Tests for Text API"""
 
-import pytest
-
-from edenai import Text
 from test.api.utils import get_api_key
+
+import pytest
+from edenai import Text
 
 
 @pytest.fixture

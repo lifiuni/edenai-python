@@ -169,7 +169,7 @@ class Text(ApiBase):
         }
 
         response = post(
-            url=self.get_endpoint_url("syntax_analysys"),
+            url=self.get_endpoint_url("syntax_analysis"),
             headers=self.post_headers,
             payload=payload,
         ).json()
