@@ -55,7 +55,7 @@ class Text(ApiBase):
         :returns: dictionary of tuples {"google" : ([entities], [importance]), "microsoft" : ([entities], [importance]), …}
         """
         payload = {
-            "providers": providers,
+            "providers": str(providers),
             "text": text,
             "entities_to_find": entities_to_find,
             "language": language,
@@ -67,7 +67,7 @@ class Text(ApiBase):
 
         result = {}
 
-        for i in response:
+        for i in response["result"]:
             provider = i.get("solution_name")
             js_result = i.get("result", {})
             result[provider] = (
@@ -79,7 +79,7 @@ class Text(ApiBase):
 
     def sentiment_analysys(
         self,
-        sentiments_to_find: str,
+        sentiments_to_find: List[str],
         language: str,
         text: str,
         providers: List[str],
@@ -97,10 +97,10 @@ class Text(ApiBase):
         >>> result = nlp_apis.sentiment_analysys(
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
-        ...    sentiments_to_find="neutral",
+        ...    sentiments_to_find=["neutral"],
         ...    language="en-US")
 
-        :param str sentiments_to_find: Sentiment expected
+        :param list(str) sentiments_to_find: Sentiment expected
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
         :param str text: Text to analyze
@@ -110,9 +110,9 @@ class Text(ApiBase):
         :returns: dictionary of tuples {"google" : ([sentiments], [sentiment_rate]), "microsoft" : ([sentiments], [sentiment_rate]), …}
         """
         payload = {
-            "providers": providers,
+            "providers": str(providers),
             "text": text,
-            "sentiments_to_find": sentiments_to_find,
+            "sentiments_to_find": str(sentiments_to_find),
             "language": language,
             "fake_call": fake_call,
         }
@@ -125,7 +125,7 @@ class Text(ApiBase):
 
         result = {}
 
-        for i in response:
+        for i in response["result"]:
             provider = i.get("solution_name")
             js_result = i.get("result", {})
             result[provider] = (
@@ -162,7 +162,7 @@ class Text(ApiBase):
         :returns: dictionary of tuples {"google" : (result), "microsoft" : (result), …}
         """
         payload = {
-            "providers": providers,
+            "providers": str(providers),
             "text": text,
             "language": language,
             "fake_call": fake_call,
@@ -176,7 +176,7 @@ class Text(ApiBase):
 
         result = {}
 
-        for i in response:
+        for i in response["result"]:
             provider = i.get("solution_name")
             js_result = i.get("result", {})
             result[provider] = js_result
@@ -185,7 +185,7 @@ class Text(ApiBase):
 
     def keyword_extraction(
         self,
-        keywords_to_find: str,
+        keywords_to_find: List[str],
         language: str,
         text: str,
         providers: List[str],
@@ -200,12 +200,12 @@ class Text(ApiBase):
         >>> from edenai import Text
         >>> nlp_apis = Text('<your_api_key'>)
         >>> result = nlp_apis.keyword_extraction(
-        ...    keywords_to_find='neutral',
+        ...    keywords_to_find=['neutral'],
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
         ...    language="en-US")
 
-        :param str keywords_to_find: Keyword expected
+        :param list(str) keywords_to_find: Keyword expected
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
         :param str text: Text to analyze
@@ -215,8 +215,8 @@ class Text(ApiBase):
         :returns: dictionary of tuples {"google" : ([keywords], [importances]), "microsoft" : ([keywords], [importances]), …}
         """
         payload = {
-            "keywords_to_find": keywords_to_find,
-            "providers": providers,
+            "keywords_to_find": str(keywords_to_find),
+            "providers": str(providers),
             "text": text,
             "language": language,
             "fake_call": fake_call,
@@ -230,7 +230,7 @@ class Text(ApiBase):
 
         result = {}
 
-        for i in response:
+        for i in response["result"]:
             provider = i.get("solution_name")
             js_result = i.get("result", {})
             result[provider] = (

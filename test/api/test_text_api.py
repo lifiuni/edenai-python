@@ -38,47 +38,47 @@ def test_endpoints(api: Text, test_input, expected):
 def test_ner(api: Text):
     result = api.ner(
         providers=["amazon", "ibm"],
-        text="I am angry today",
+        text="I am angry today and will angry tomorrow, and also on the next week",
         entities_to_find="",
         language="en-US",
     )
 
-    assert len(result["amazon"][0]) > 0
-    assert len(result["amazon"][1]) > 0
+    assert len(result["Amazon Web Services"][0]) > 0
+    assert len(result["Amazon Web Services"][1]) > 0
 
 
 @pytest.mark.skip_internet_tests
 def test_sentiment_analysys(api: Text):
     result = api.sentiment_analysys(
         providers=["amazon", "ibm"],
-        text="I am angry today",
+        text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",
-        sentiments_to_find="neutral",
+        sentiments_to_find=["neutral"],
     )
 
-    assert len(result["amazon"][0]) > 0
-    assert len(result["amazon"][1]) > 0
+    assert len(result["Amazon Web Services"][0]) > 0
+    assert len(result["Amazon Web Services"][1]) > 0
 
 
 @pytest.mark.skip_internet_tests
 def test_syntax_analysys(api: Text):
     result = api.syntax_analysys(
         providers=["amazon", "ibm"],
-        text="I am angry today",
+        text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",
     )
 
-    assert len(result["amazon"]) == 1
+    assert len(result["Amazon Web Services"]) > 0
 
 
 @pytest.mark.skip_internet_tests
 def test_keyword_extraction(api: Text):
     result = api.keyword_extraction(
-        keywords_to_find="neutral",
+        keywords_to_find=["neutral"],
         providers=["amazon", "ibm"],
-        text="I am angry today",
+        text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",
     )
 
-    assert len(result["amazon"][0]) > 0
-    assert len(result["amazon"][1]) > 0
+    assert len(result["Amazon Web Services"][0]) > 0
+    assert len(result["Amazon Web Services"][1]) > 0
