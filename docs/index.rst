@@ -28,6 +28,11 @@ Text
 .. autoclass:: edenai.api.text_api.Text
    :members:
 
+Vision
+-------
+.. autoclass:: edenai.api.vision_api.Vision
+   :members:
+
 Utils
 ======
 httpx post request
