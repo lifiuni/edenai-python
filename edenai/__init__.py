@@ -2,4 +2,4 @@
 
 __version__ = "0.0.0"
 
-from .api import Text, Vision
+from .api import Text, Vision, Audio

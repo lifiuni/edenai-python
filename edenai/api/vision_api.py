@@ -15,7 +15,7 @@ class Vision(ApiBase):
     Documentation: https://api.edenai.run/v1/redoc/#tag/Vision
 
     >>> from edenai import Vision
-    >>> nlp_apis = Vision('<your_api_key>')
+    >>> vision_apis = Vision('<your_api_key>')
     """
 
     root_endpoint = "vision/{}"

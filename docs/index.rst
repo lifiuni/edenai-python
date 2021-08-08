@@ -33,6 +33,11 @@ Vision
 .. autoclass:: edenai.api.vision_api.Vision
    :members:
 
+Audio
+-------
+.. autoclass:: edenai.api.audio_api.Audio
+   :members:
+
 Utils
 ======
 httpx post request
