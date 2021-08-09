@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Endpoints for the Audio API"""
 from pathlib import Path
-from typing import Any, Dict, List, Tuple, Union
+from typing import Any, Dict, List, Union
 
 from edenai.utils.api_requests import post
 
