@@ -44,6 +44,11 @@ Translation
 .. autoclass:: edenai.api.translation_api.Translation
    :members:
 
+OCR
+---
+.. autoclass:: edenai.api.ocr_api.OCR
+   :members:
+
 Utils
 ======
 httpx post request
