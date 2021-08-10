@@ -16,7 +16,7 @@ if sys.version_info < (3, 6):
 from edenai import __version__ as version
 
 INSTALL_REQUIRES = [
-    "httpx==0.18.2",
+    "requests",
 ]
 
 EXTRAS_DEV_DOCS = [
