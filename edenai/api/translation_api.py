@@ -44,8 +44,8 @@ class Translation(ApiBase):
         >>> result = translation_apis.translation(
         ...    text_to_translate="Hello, my name is John"
         ...    providers=["amazon", "ibm"],
-        ...    source_language="en",
-        ...    target_language="fr")
+        ...    source_language="en-US",
+        ...    target_language="fr-FR")
 
         :param str text_to_translate: Text to translate
         :param str source_language: Language codec of text
