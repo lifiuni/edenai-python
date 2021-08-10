@@ -46,10 +46,10 @@ def test_basic(api: OCR):
 
 @pytest.mark.skip_internet_tests
 def test_invoice(api: OCR):
-    result = api.invoice(file=invoice_file, language="en-US", providers=["mindee"])
+    result = api.invoice(file=invoice_file, language="en-US", providers=["microsoft"])
 
-    assert len(result["Mindee"]) > 0
-    assert isinstance(result["Mindee"], dict)
+    assert len(result["Microsoft"]) > 0
+    assert isinstance(result["Microsoft"], list)
 
 
 @pytest.mark.skip_internet_tests
@@ -59,7 +59,7 @@ def test_translation_error(api_wrong: OCR):
 
 
 @pytest.mark.skip_internet_tests
-def test_language_detection_error(api_wrong: OCR):
+def test_invoice_error(api_wrong: OCR):
     result = api_wrong.invoice(
         file=invoice_file, language="en-US", providers=["amazon"]
     )
