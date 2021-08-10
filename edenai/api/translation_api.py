@@ -97,11 +97,11 @@ class Translation(ApiBase):
         >>> result = translation_apis.language_detection(
         ...    text="Hello, my name is John"
         ...    providers=["amazon", "ibm"],
-        ...    languages_to_find="fr")
+        ...    languages_to_find="fr-FR")
 
         :param str text: Text to analyze
         :param str languages_to_find: Language codec expected
-            (ex: fr (French), en (English), es (Spanish))
+            (ex: fr-FR (French), en-US (English), es-ES (Spanish))
         :param list(str) providers: Providers, non-empty Provider to compare
             (ex: ['amazon', 'microsoft', 'ibm','google'])
         :returns: dictionary of tuples {"google" : (languages, confidences), "microsoft" : (languages, confidences), …}
