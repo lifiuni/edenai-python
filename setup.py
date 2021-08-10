@@ -31,8 +31,7 @@ setup(
     name="edenai-python",
     version=version,
     description="Eden AI simplifies the use and integration of AI technologies by providing a unique API connected to the best AI engines and combined with a powerful management platform. The platform covers a wide range of AI technologies.",
-    # TODO Create rst file
-    # long_description=open("README.rst").read(),
+    long_description=open("README.md").read(),
     maintainer="",
     maintainer_email="",
     url="https://github.com/dmitriiweb/edenai-python",
