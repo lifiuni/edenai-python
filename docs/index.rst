@@ -51,9 +51,9 @@ OCR
 
 Utils
 ======
-httpx post request
+post request
 -------------------
-.. autofunction:: edenai.utils.httpx_requests.post
+.. autofunction:: edenai.utils.api_requests.post
 
 Indices and tables
 ==================
