@@ -108,9 +108,6 @@ class OCR(ApiBase):
         :returns: dictionary of dicts {"google": {result}, "microsoft": {result}, …}
 
         """
-        # FIXME
-        # Always return the error: {"errors": {"providers": ["Please select a valid supplier"]}}
-
         payload = {
             "providers": str(providers),
             "language": language,
