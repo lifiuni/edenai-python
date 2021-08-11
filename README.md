@@ -23,29 +23,30 @@ For all the proposed technologies, we provide a single endpoint: the service pro
 
 ## Getting started
 To start using Eden AI APIs, you first need to get your API Token.  You can get your token on your IAM [here](https://app.edenai.run/admin/account).
-Enter your access token:
-```python
-import requests
-headers = {  'Authorization': 'Bearer your API Key'}
-```
+
+## Install via pip 
+Just run :
+
+    pip install edenai
 
 ## Usage
-### Initialization
-Select your API endpoint:
-```python
-url = 'https://api.edenai.run/v1/pretrained/+ endpoint'
+
+If you want, for example, to use key word extraction from google :
+
+```python 
+
+From edenai import Text 
+
+API_KEY = “YOURAPIKEYTHATYOUGETFROMTHEPLATFORM”
+some_text = “Hello this is a great example to begin with”
+
+nlp_apis = Text(API_KEY)
+result = text.keyword_extraction(some_text,  
+                                     providers=[“google”])
+
 ```
-### Select parameters 
-Set parameters corresponding to the API, and providers APIs you want to run :
-Example:
-```python
-payload = {'providers': '[\'ibm\', \'microsoft\', \'aws\', \'google\']','text':'I am happy today', 'languages_to_find': 'en'}
-```
-### Get results
-```python
-response = requests.request("POST", url, headers=headers, data = payload)
-print(response.text.encode('utf8'))
-```
+
+You can find the complete list of technologies we offer in the API [documentation](https://api.edenai.run/v1/redoc/) .
 
 ## Support & Community
 
