@@ -59,5 +59,9 @@ We are always updating our docs, so a good way to always stay up to date is to w
 Blog:
 We also regularly publish various articles with Eden AI news and technical articles on the different AI engines that exist. You can find these articles here: edenai.co/blog
 
+## Contribution
+
+If you'd like to contribute, please check the [CONTRIBUTING.md](https://github.com/edenai/edenai-python/blob/main/CONTRIBUTING.md) file.
+
 ## Documentation
 To have more information about platform and API use, you can check ou our [documentation](https://api.edenai.run/v1/redoc/)
