@@ -28,7 +28,7 @@ EXTRAS_DEV_DOCS = [
 ]
 
 setup(
-    name="edenai-python",
+    name="edenai",
     version=version,
     description="Eden AI simplifies the use and integration of AI technologies by providing a unique API connected to the best AI engines and combined with a powerful management platform. The platform covers a wide range of AI technologies.",
     long_description=open("README.md").read(),
