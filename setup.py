@@ -32,6 +32,7 @@ setup(
     version=version,
     description="Eden AI simplifies the use and integration of AI technologies by providing a unique API connected to the best AI engines and combined with a powerful management platform. The platform covers a wide range of AI technologies.",
     long_description=open("README.md").read(),
+    long_description_content_type='text/markdown',
     author="EDENAI",
     author_mail="contact@edenai.co",
     maintainer="samyme",
