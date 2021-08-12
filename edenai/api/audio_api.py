@@ -30,9 +30,9 @@ class Audio(ApiBase):
 
     def speech_to_text(
         self,
+        file: Union[Path, str],
         text_to_find: List[str],
         language: str,
-        file: Union[Path, str],
         providers: List[str],
     ) -> Dict[str, Dict[str, Any]]:
         """Speech recognition is technology that can recognize spoken words,

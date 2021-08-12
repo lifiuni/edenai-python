@@ -29,7 +29,7 @@ class Text(ApiBase):
         self.base_url = self.base_url.format(self.root_endpoint)
 
     def ner(
-        self, entities_to_find: str, language: str, text: str, providers: List[str]
+        self, text: str, entities_to_find: str, language: str, providers: List[str]
     ) -> Dict[str, Tuple[List, List]]:
         """Named Entity Recognition (also called entity identification or
         entity extraction) is an information extraction technique that
@@ -46,10 +46,10 @@ class Text(ApiBase):
         ...    entities_to_find="",
         ...    language="en-US")
 
+        :param str text: Text to analyze
         :param str entities_to_find: Entities expected
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
-        :param str text: Text to analyze
         :param list(str) providers: Providers, non-empty Provider to compare
             (ex: ['amazon', 'microsoft', 'ibm','google'])
         :returns: dictionary of tuples {"google" : ([entities], [importance]), "microsoft" : ([entities], [importance]), …}
@@ -84,9 +84,9 @@ class Text(ApiBase):
 
     def sentiment_analysys(
         self,
+        text: str,
         sentiments_to_find: List[str],
         language: str,
-        text: str,
         providers: List[str],
     ) -> Dict[str, Tuple[List, List]]:
         """Sentiment analysis API extracts sentiment in a given string of text.
@@ -104,10 +104,10 @@ class Text(ApiBase):
         ...    sentiments_to_find=["neutral"],
         ...    language="en-US")
 
+        :param str text: Text to analyze
         :param list(str) sentiments_to_find: Sentiment expected
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
-        :param str text: Text to analyze
         :param list(str) providers: Providers, non-empty Provider to compare
             (ex: ['amazon', 'microsoft', 'ibm','google'])
         :returns: dictionary of tuples {"google" : ([sentiments], [sentiment_rate]), "microsoft" : ([sentiments], [sentiment_rate]), …}
@@ -144,8 +144,8 @@ class Text(ApiBase):
 
     def syntax_analysys(
         self,
-        language: str,
         text: str,
+        language: str,
         providers: List[str],
     ) -> Dict[str, Dict[str, Any]]:
         """Syntax analysis consists principaly in highlighting the structure of a text.
@@ -159,9 +159,9 @@ class Text(ApiBase):
         ...    text="I am angry today",
         ...    language="en-US")
 
+        :param str text: Text to analyze
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
-        :param str text: Text to analyze
         :param list(str) providers: Providers, non-empty Provider to compare
             (ex: ['amazon', 'microsoft', 'ibm','google'])
         :returns: dictionary of tuples {"google" : (result), "microsoft" : (result), …}
@@ -194,9 +194,9 @@ class Text(ApiBase):
 
     def keyword_extraction(
         self,
+        text: str,
         keywords_to_find: List[str],
         language: str,
-        text: str,
         providers: List[str],
     ) -> Dict[str, Dict[str, Any]]:
         """Keyword extraction (also known as keyword detection or keyword analysis)
@@ -213,10 +213,10 @@ class Text(ApiBase):
         ...    text="I am angry today",
         ...    language="en-US")
 
+        :param str text: Text to analyze
         :param list(str) keywords_to_find: Keyword expected
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
-        :param str text: Text to analyze
         :param list(str) providers: Providers, non-empty Provider to compare
             (ex: ['amazon', 'microsoft', 'ibm','google'])
         :returns: dictionary of tuples {"google" : ([keywords], [importances]), "microsoft" : ([keywords], [importances]), …}
