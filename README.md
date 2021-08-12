@@ -40,9 +40,13 @@ From edenai import Text
 API_KEY = “YOURAPIKEYTHATYOUGETFROMTHEPLATFORM”
 some_text = “Hello this is a great example to begin with”
 
-nlp_apis = Text(API_KEY)
-result = text.keyword_extraction(some_text,  
-                                     providers=[“google”])
+text_apis = Text(API_KEY)
+result = text_apis.keyword_extraction(
+        text=some_text,
+        keywords_to_find=["begin"],
+        providers=["amazon", "ibm"],
+        language="en-US",
+    )
 
 ```
 
