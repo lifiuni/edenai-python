@@ -33,7 +33,6 @@ class OCR(ApiBase):
         file: Union[Path, str],
         language: str,
         providers: List[str],
-        text_reference: str = "",
     ) -> Dict[str, str]:
         """Optical Character Recognition or optical character reader (OCR)
         is the electronic or mechanical conversion of images of typed,
@@ -54,14 +53,12 @@ class OCR(ApiBase):
         :param str language: Language codec expected (ex: en-US, fr-FR)
         :param list(str) providers: Providers, non-empty Provider
             to compare (ex: ['amazon', 'microsoft', 'ibm','google'])
-        :param str text_reference: Text expected
         :returns: dictionary of strings {"google": final_text, "microsoft": final_text, …}
 
         """
         payload = {
             "providers": str(providers),
             "language": language,
-            "text_reference": text_reference,
         }
         response = post(
             url=self.get_endpoint_url("basic"),

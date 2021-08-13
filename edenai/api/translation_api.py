@@ -84,7 +84,6 @@ class Translation(ApiBase):
     def language_detection(
         self,
         text: str,
-        languages_to_find: str,
         providers: List[str],
     ) -> Dict[str, Tuple[List, List]]:
         """Language Detection or language guessing is the algorithm of
@@ -97,11 +96,9 @@ class Translation(ApiBase):
         >>> result = translation_apis.language_detection(
         ...    text="Hello, my name is John"
         ...    providers=["amazon", "ibm"],
-        ...    languages_to_find="fr-FR")
+        ...    )
 
         :param str text: Text to analyze
-        :param str languages_to_find: Language codec expected
-            (ex: fr-FR (French), en-US (English), es-ES (Spanish))
         :param list(str) providers: Providers, non-empty Provider to compare
             (ex: ['amazon', 'microsoft', 'ibm','google'])
         :returns: dictionary of tuples {"google" : (languages, confidences), "microsoft" : (languages, confidences), …}
@@ -109,7 +106,6 @@ class Translation(ApiBase):
         payload = {
             "providers": str(providers),
             "text": text,
-            "languages_to_find": languages_to_find,
         }
         response = post(
             url=self.get_endpoint_url("language_detection"),

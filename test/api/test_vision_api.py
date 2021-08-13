@@ -59,7 +59,7 @@ def test_face_detection(api: Vision):
 @pytest.mark.skip_internet_tests
 def test_object_detection(api: Vision):
     result = api.object_detection(
-        providers=["amazon", "ibm"], file=test_img, objects_to_find=[""]
+        providers=["amazon", "ibm"], file=test_img
     )
 
     assert len(result["Amazon Web Services"]) > 0
@@ -83,6 +83,6 @@ def test_face_detection_error(api_wrong: Vision):
 @pytest.mark.skip_internet_tests
 def test_object_detection_error(api_wrong: Vision):
     result = api_wrong.object_detection(
-        providers=["amazon", "ibm"], file=test_img, objects_to_find=[""]
-    )
+        providers=["amazon", "ibm"], file=test_img
+        )
     assert "errors" in result

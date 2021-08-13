@@ -38,7 +38,7 @@ def test_endpoints(api: Audio, test_input, expected):
 
 @pytest.mark.skip_internet_tests
 def test_speech_to_text(api: Audio):
-    result = api.speech_to_text(["some text"], "en-US", test_audio, ["amazon"])
+    result = api.speech_to_text( test_audio, "en-US",["amazon"])
 
     assert len(result["Amazon Web Services"]) > 0
 
@@ -54,7 +54,7 @@ def test_text_to_speech(api: Audio):
 
 @pytest.mark.skip_internet_tests
 def test_speech_to_text_error(api_wrong: Audio):
-    result = api_wrong.speech_to_text(["some text"], "en-US", test_audio, ["amazon"])
+    result = api_wrong.speech_to_text( test_audio, "en-US", ["amazon"])
     assert "errors" in result
 
 

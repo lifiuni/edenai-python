@@ -44,7 +44,6 @@ def test_ner(api: Text):
     result = api.ner(
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
-        entities_to_find="",
         language="en-US",
     )
 
@@ -58,7 +57,6 @@ def test_sentiment_analysys(api: Text):
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",
-        sentiments_to_find=["neutral"],
     )
 
     assert len(result["Amazon Web Services"][0]) > 0
@@ -79,7 +77,6 @@ def test_syntax_analysys(api: Text):
 @pytest.mark.skip_internet_tests
 def test_keyword_extraction(api: Text):
     result = api.keyword_extraction(
-        keywords_to_find=["neutral"],
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",
@@ -94,7 +91,6 @@ def test_ner_error(api_wrong: Text):
     result = api_wrong.ner(
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
-        entities_to_find="",
         language="en-US",
     )
 
@@ -107,7 +103,6 @@ def test_sentiment_analysys_error(api_wrong: Text):
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",
-        sentiments_to_find=["neutral"],
     )
     assert "errors" in result
 
@@ -125,7 +120,6 @@ def test_syntax_analysys_error(api_wrong: Text):
 @pytest.mark.skip_internet_tests
 def test_keyword_extraction_error(api_wrong: Text):
     result = api_wrong.keyword_extraction(
-        keywords_to_find=["neutral"],
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",

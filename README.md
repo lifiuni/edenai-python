@@ -50,7 +50,7 @@ result = text_apis.keyword_extraction(
 
 ```
 
-You can find the complete list of technologies we offer in the API [documentation](https://api.edenai.run/v1/redoc/) .
+You can find the complete list of technologies we offer in the [SDK documentation](https://edenai-python.readthedocs.io/) .
 
 ## Support & Community
 
@@ -68,4 +68,6 @@ We also regularly publish various articles with Eden AI news and technical artic
 If you'd like to contribute, please check the [CONTRIBUTING.md](https://github.com/edenai/edenai-python/blob/main/CONTRIBUTING.md) file.
 
 ## Documentation
+
+You can find the complete list of technologies we offer in the [SDK documentation](https://edenai-python.readthedocs.io/) .
 To have more information about platform and API use, you can check ou our [documentation](https://api.edenai.run/v1/redoc/)

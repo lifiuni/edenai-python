@@ -113,7 +113,7 @@ class Vision(ApiBase):
         return result
 
     def object_detection(
-        self, file: Union[str, Path], providers: List[str], objects_to_find: List[str]
+        self, file: Union[str, Path], providers: List[str] 
     ) -> Dict[str, Dict[str, Any]]:
         """Object Detection is a computer vision technique that allows us
         to identify and locate objects in an image or video
@@ -125,7 +125,6 @@ class Vision(ApiBase):
         >>> result = vision_apis.object_detection(
         ...    providers=["amazon", "ibm"],
         ...    file="Picture/example1.jpg",
-        ...    objects_to_find=[''])
 
         :param Path|str file: A path to an image (pdf, jpg, jpeg, png, tiff),
             must be str or Path
@@ -138,7 +137,6 @@ class Vision(ApiBase):
             headers=self.post_headers,
             payload={
                 "providers": str(providers),
-                "objects_to_find": str(objects_to_find),
             },
             files=file,
         ).json()

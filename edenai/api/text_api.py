@@ -29,7 +29,7 @@ class Text(ApiBase):
         self.base_url = self.base_url.format(self.root_endpoint)
 
     def ner(
-        self, text: str, entities_to_find: str, language: str, providers: List[str]
+        self, text: str, language: str, providers: List[str]
     ) -> Dict[str, Tuple[List, List]]:
         """Named Entity Recognition (also called entity identification or
         entity extraction) is an information extraction technique that
@@ -43,11 +43,9 @@ class Text(ApiBase):
         >>> result = nlp_apis.ner(
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
-        ...    entities_to_find="",
         ...    language="en-US")
 
         :param str text: Text to analyze
-        :param str entities_to_find: Entities expected
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
         :param list(str) providers: Providers, non-empty Provider to compare
@@ -57,7 +55,6 @@ class Text(ApiBase):
         payload = {
             "providers": str(providers),
             "text": text,
-            "entities_to_find": entities_to_find,
             "language": language,
         }
 
@@ -85,7 +82,6 @@ class Text(ApiBase):
     def sentiment_analysys(
         self,
         text: str,
-        sentiments_to_find: List[str],
         language: str,
         providers: List[str],
     ) -> Dict[str, Tuple[List, List]]:
@@ -101,11 +97,9 @@ class Text(ApiBase):
         >>> result = nlp_apis.sentiment_analysys(
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
-        ...    sentiments_to_find=["neutral"],
         ...    language="en-US")
 
         :param str text: Text to analyze
-        :param list(str) sentiments_to_find: Sentiment expected
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
         :param list(str) providers: Providers, non-empty Provider to compare
@@ -115,7 +109,6 @@ class Text(ApiBase):
         payload = {
             "providers": str(providers),
             "text": text,
-            "sentiments_to_find": str(sentiments_to_find),
             "language": language,
         }
 
@@ -195,7 +188,6 @@ class Text(ApiBase):
     def keyword_extraction(
         self,
         text: str,
-        keywords_to_find: List[str],
         language: str,
         providers: List[str],
     ) -> Dict[str, Dict[str, Any]]:
@@ -208,13 +200,11 @@ class Text(ApiBase):
         >>> from edenai import Text
         >>> nlp_apis = Text('<your_api_key'>)
         >>> result = nlp_apis.keyword_extraction(
-        ...    keywords_to_find=['neutral'],
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
         ...    language="en-US")
 
         :param str text: Text to analyze
-        :param list(str) keywords_to_find: Keyword expected
         :param str language: Language codec of text (ex: fr-FR (French),
             en-US (English), es-ES (Spanish))
         :param list(str) providers: Providers, non-empty Provider to compare
@@ -222,7 +212,6 @@ class Text(ApiBase):
         :returns: dictionary of tuples {"google" : ([keywords], [importances]), "microsoft" : ([keywords], [importances]), …}
         """
         payload = {
-            "keywords_to_find": str(keywords_to_find),
             "providers": str(providers),
             "text": text,
             "language": language,

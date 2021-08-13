@@ -31,7 +31,6 @@ class Audio(ApiBase):
     def speech_to_text(
         self,
         file: Union[Path, str],
-        text_to_find: List[str],
         language: str,
         providers: List[str],
     ) -> Dict[str, Dict[str, Any]]:
@@ -43,7 +42,6 @@ class Audio(ApiBase):
         >>> from edenai import Audio
         >>> audio_apis = Audio('<your_api_key'>)
         >>> result = audio_apis.speech_to_text(
-        ...    text_to_find=["some text"],
         ...    providers=["amazon", "ibm"],
         ...    file="Audio/example1.wav",
         ...    language="en-US")
@@ -57,7 +55,6 @@ class Audio(ApiBase):
         """
         payload = {
             "providers": str(providers),
-            "text_to_find": str(text_to_find),
             "language": language,
         }
         response = post(
