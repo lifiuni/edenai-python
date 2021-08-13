@@ -37,13 +37,12 @@ If you want, for example, to use key word extraction from google :
 
 from edenai import Text 
 
-API_KEY = “YOURAPIKEYTHATYOUGETFROMTHEPLATFORM”
-some_text = “Hello this is a great example to begin with”
+API_KEY = "YOURAPIKEYTHATYOUGETFROMTHEPLATFORM"
+some_text = "Hello this is a great example to begin with"
 
 text_apis = Text(API_KEY)
 result = text_apis.keyword_extraction(
         text=some_text,
-        keywords_to_find=["begin"],
         providers=["amazon", "ibm"],
         language="en-US",
     )
