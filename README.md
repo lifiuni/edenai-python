@@ -35,7 +35,7 @@ If you want, for example, to use key word extraction from google :
 
 ```python 
 
-From edenai import Text 
+from edenai import Text 
 
 API_KEY = “YOURAPIKEYTHATYOUGETFROMTHEPLATFORM”
 some_text = “Hello this is a great example to begin with”
