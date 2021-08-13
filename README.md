@@ -27,7 +27,7 @@ To start using Eden AI APIs, you first need to get your API Token.  You can get 
 ## Install via pip 
 Just run :
 
-    pip install edenai
+    pip install -U edenai
 
 ## Usage
 
