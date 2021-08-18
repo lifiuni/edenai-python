@@ -124,7 +124,7 @@ class Vision(ApiBase):
         >>> vision_apis = Vision('<your_api_key'>)
         >>> result = vision_apis.object_detection(
         ...    providers=["amazon", "ibm"],
-        ...    file="Picture/example1.jpg",
+        ...    file="Picture/example1.jpg")
 
         :param Path|str file: A path to an image (pdf, jpg, jpeg, png, tiff),
             must be str or Path

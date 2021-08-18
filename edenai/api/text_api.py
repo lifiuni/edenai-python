@@ -13,7 +13,7 @@ class Text(ApiBase):
     Documentation: https://api.edenai.run/v1/redoc/#tag/Text
 
     >>> from edenai import Text
-    >>> nlp_apis = Text('<your_api_key>')
+    >>> text_apis = Text('<your_api_key>')
     """
 
     root_endpoint = "text/{}"
@@ -39,8 +39,8 @@ class Text(ApiBase):
         https://api.edenai.run/v1/redoc/#operation/Named%20Entity%20Recognition
 
         >>> from edenai import Text
-        >>> nlp_apis = Text('<your_api_key'>)
-        >>> result = nlp_apis.ner(
+        >>> text_apis = Text('<your_api_key'>)
+        >>> result = text_apis.ner(
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
         ...    language="en-US")
@@ -93,8 +93,8 @@ class Text(ApiBase):
         https://api.edenai.run/v1/redoc/#operation/Sentiment%20Analysis
 
         >>> from edenai import Text
-        >>> nlp_apis = Text('<your_api_key'>)
-        >>> result = nlp_apis.sentiment_analysys(
+        >>> text_apis = Text('<your_api_key'>)
+        >>> result = text_apis.sentiment_analysys(
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
         ...    language="en-US")
@@ -146,8 +146,8 @@ class Text(ApiBase):
         https://api.edenai.run/v1/redoc/#operation/Syntax%20Analysis
 
         >>> from edenai import Text
-        >>> nlp_apis = Text('<your_api_key'>)
-        >>> result = nlp_apis.syntax_analysys(
+        >>> text_apis = Text('<your_api_key'>)
+        >>> result = text_apis.syntax_analysys(
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
         ...    language="en-US")
@@ -198,8 +198,8 @@ class Text(ApiBase):
         https://api.edenai.run/v1/redoc/#operation/Keyword%20Extraction
 
         >>> from edenai import Text
-        >>> nlp_apis = Text('<your_api_key'>)
-        >>> result = nlp_apis.keyword_extraction(
+        >>> text_apis = Text('<your_api_key'>)
+        >>> result = text_apis.keyword_extraction(
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
         ...    language="en-US")
