@@ -6,7 +6,7 @@ from edenai import Text
 text_apis = Text("Your_API_key")
 
 result = text_apis.syntax_analysis(
-# Available providers and languages here: https://api.edenai.run/v1/redoc/#operation/Language%20Detection
+# Available providers and languages here: https://api.edenai.run/v1/redoc/#operation/Syntax%20Analysis
     text="Your text",
     providers=["lettria", "microsoft"],
     language="en-US")
