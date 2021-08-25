@@ -57,7 +57,7 @@ If you have any problems, please contact us at this email address: contact@edena
 
 Community:
 You can interact personally with other people actively using and working with Eden AI and join our [Slack community](https://join.slack.com/t/edenai-community/shared_invite/zt-t68c2pr9-4lDKQ_qEqmLiWNptQzB_6w).
-We are always updating our docs, so a good way to always stay up to date is to watch our documentation repo on [Github](github.com/edenai).
+We are always updating our docs, so a good way to always stay up to date is to watch our documentation repo on [Github](https://www.github.com/edenai).
 
 Blog:
 We also regularly publish various articles with Eden AI news and technical articles on the different AI engines that exist. You can find these articles here: [Blog](https://www.edenai.co/blog)
