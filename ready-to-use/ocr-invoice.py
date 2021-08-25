@@ -11,4 +11,4 @@ result = ocr_apis.invoice(
    language="en-US",
    file="your_invoice.pdf")
 
-print(result)
+print(result) 
