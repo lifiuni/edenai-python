@@ -25,13 +25,13 @@ For all the proposed technologies, we provide a single endpoint: the service pro
 To start using Eden AI APIs, you first need to get your API Token.  You can get your token on your IAM [here](https://app.edenai.run/admin/account).
 
 ## Install via pip 
-Just run :
+Just run:
 
     pip install -U edenai
 
 ## Usage
 
-If you want, for example, to use key word extraction from google :
+If you want, for example, to use key word extraction from Amazon Web Services and IBM Watson:
 
 ```python 
 
