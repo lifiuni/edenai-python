@@ -11,4 +11,4 @@ result = ocr_apis.basic(
    language="en-US",
    file="your_image.png")
 
-print(result)
+print(result) 
