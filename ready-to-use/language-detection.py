@@ -10,4 +10,4 @@ result = translation_apis.language_detection(
    text="Your text written in an unknown language",
    providers=["amazon", "ibm"])
 
-print(result)
+print(result) 
