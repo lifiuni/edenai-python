@@ -19,7 +19,7 @@ class Text(ApiBase):
     root_endpoint = "text/{}"
     endpoints = {
         "ner": "named_entity_recognition",
-        "sentiment_analysys": "sentiment_analysis",
+        "sentiment_analysis": "sentiment_analysis",
         "syntax_analysis": "syntax_analysis",
         "keyword_extraction": "keyword_extraction",
     }
@@ -79,7 +79,7 @@ class Text(ApiBase):
 
         return result
 
-    def sentiment_analysys(
+    def sentiment_analysis(
         self,
         text: str,
         language: str,
@@ -94,7 +94,7 @@ class Text(ApiBase):
 
         >>> from edenai import Text
         >>> text_apis = Text('<your_api_key'>)
-        >>> result = text_apis.sentiment_analysys(
+        >>> result = text_apis.sentiment_analysis(
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
         ...    language="en-US")
@@ -113,7 +113,7 @@ class Text(ApiBase):
         }
 
         response = post(
-            url=self.get_endpoint_url("sentiment_analysys"),
+            url=self.get_endpoint_url("sentiment_analysis"),
             headers=self.post_headers,
             payload=payload,
         ).json()
@@ -135,7 +135,7 @@ class Text(ApiBase):
 
         return result
 
-    def syntax_analysys(
+    def syntax_analysis(
         self,
         text: str,
         language: str,
@@ -147,7 +147,7 @@ class Text(ApiBase):
 
         >>> from edenai import Text
         >>> text_apis = Text('<your_api_key'>)
-        >>> result = text_apis.syntax_analysys(
+        >>> result = text_apis.syntax_analysis(
         ...    providers=["amazon", "ibm"],
         ...    text="I am angry today",
         ...    language="en-US")

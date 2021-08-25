@@ -22,7 +22,7 @@ def api_wrong():
     [
         ("ner", "https://api.edenai.run/v1/pretrained/text/named_entity_recognition"),
         (
-            "sentiment_analysys",
+            "sentiment_analysis",
             "https://api.edenai.run/v1/pretrained/text/sentiment_analysis",
         ),
         (
@@ -52,8 +52,8 @@ def test_ner(api: Text):
 
 
 @pytest.mark.skip_internet_tests
-def test_sentiment_analysys(api: Text):
-    result = api.sentiment_analysys(
+def test_sentiment_analysis(api: Text):
+    result = api.sentiment_analysis(
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",
@@ -64,8 +64,8 @@ def test_sentiment_analysys(api: Text):
 
 
 @pytest.mark.skip_internet_tests
-def test_syntax_analysys(api: Text):
-    result = api.syntax_analysys(
+def test_syntax_analysis(api: Text):
+    result = api.syntax_analysis(
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",
@@ -98,8 +98,8 @@ def test_ner_error(api_wrong: Text):
 
 
 @pytest.mark.skip_internet_tests
-def test_sentiment_analysys_error(api_wrong: Text):
-    result = api_wrong.sentiment_analysys(
+def test_sentiment_analysis_error(api_wrong: Text):
+    result = api_wrong.sentiment_analysis(
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",
@@ -108,8 +108,8 @@ def test_sentiment_analysys_error(api_wrong: Text):
 
 
 @pytest.mark.skip_internet_tests
-def test_syntax_analysys_error(api_wrong: Text):
-    result = api_wrong.syntax_analysys(
+def test_syntax_analysis_error(api_wrong: Text):
+    result = api_wrong.syntax_analysis(
         providers=["amazon", "ibm"],
         text="I am angry today and will angry tomorrow, and also on the next week",
         language="en-US",

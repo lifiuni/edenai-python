@@ -43,7 +43,7 @@ class OCR(ApiBase):
 
         >>> from edenai import OCR
         >>> ocr_apis = OCR('<your_api_key'>)
-        >>> result = ocr_apis.translation(
+        >>> result = ocr_apis.basic(
         ...    providers=["amazon", "ibm"],
         ...    language="en-US",
         ...    file="Images/image.png")
