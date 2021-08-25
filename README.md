@@ -56,7 +56,7 @@ You can find the complete list of technologies we offer in the [SDK documentatio
 If you have any problems, please contact us at this email address: contact@edenai.co. We will be happy to help you in the use of Eden AI.
 
 Community:
-You can interact personally with other people actively using and working with Eden AI and join our Slack community.
+You can interact personally with other people actively using and working with Eden AI and join our [Slack community](https://join.slack.com/t/edenai-community/shared_invite/zt-t68c2pr9-4lDKQ_qEqmLiWNptQzB_6w).
 We are always updating our docs, so a good way to always stay up to date is to watch our documentation repo on Github: github.com/edenai
 
 Blog:
