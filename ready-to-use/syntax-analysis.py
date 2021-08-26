@@ -1,3 +1,5 @@
+# Syntax analysis consists principaly in highlighting the structure of a text.
+
 pip install edenai
 
 from edenai import Text
