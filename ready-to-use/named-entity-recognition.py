@@ -1,3 +1,5 @@
+# Named Entity Recognition (NER - also called entity identification or entity extraction) is an information extraction technique that automatically identifies named entities in a text and classifies them into predefined categories.
+
 pip install edenai
 
 from edenai import Text
