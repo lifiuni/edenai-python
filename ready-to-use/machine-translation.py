@@ -1,3 +1,5 @@
+# Machine translation (or automatic translation) refers to the translation of a text into another language.
+
 pip install edenai
 
 from edenai import Translation
