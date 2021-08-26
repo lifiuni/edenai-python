@@ -1,6 +1,6 @@
 # OCR Invoice enables users to analyze invoices in a variety of formats and return structured data to automate the invoice processing.
 
-pip install edenai
+# pip install edenai
 
 from edenai import OCR
 
