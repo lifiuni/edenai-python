@@ -1,6 +1,6 @@
 # Object detection is a computer vision technology which allows to detect common objects on images. 
 
-pip install edenai
+# pip install edenai
 
 from edenai import Vision
 
