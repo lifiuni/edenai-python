@@ -1,3 +1,5 @@
+# Sentiment analysis extracts sentiment in a given string of text. Sentiment analysis, also called 'opinion mining', uses natural language processing, text analysis and computational linguistics to identify and detect subjective information from the input text.
+
 pip install edenai
 
 from edenai import Text
