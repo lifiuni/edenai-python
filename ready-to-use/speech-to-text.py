@@ -1,6 +1,6 @@
 # Speech-to-Text (or speech recognition) is technology that can recognize spoken words, which can then be converted to text.
 
-pip install edenai
+# pip install edenai
 
 from edenai import Audio
 
