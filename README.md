@@ -49,7 +49,7 @@ result = text_apis.keyword_extraction(
 
 ```
 
-You can find the complete list of technologies we offer in the [SDK documentation](https://edenai-python.readthedocs.io/) .
+You can find the complete list of technologies we offer in the [SDK documentation](https://edenai-python.readthedocs.io/) and [quick ready-to-use examples here](https://github.com/edenai/edenai-python/tree/main/ready-to-use).
 
 ## Support & Community
 
