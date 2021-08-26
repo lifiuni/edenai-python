@@ -1,6 +1,6 @@
 # Face Detection is a computer vision technology which allows to detect human faces on images with additionnal informations: estimated age, sex, emotion, etc. 
 
-pip install edenai
+# pip install edenai
 
 from edenai import Vision
 
