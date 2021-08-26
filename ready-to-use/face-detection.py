@@ -12,4 +12,4 @@ result = vision_apis.face_detection(
    providers=["google","amazon"],
    file="your_image.png")
 
-print(result) 
+print(result)
