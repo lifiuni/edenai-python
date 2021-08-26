@@ -1,3 +1,5 @@
+# Keyword extraction consists of automatically extracting the most important words and expressions in a text.
+
 pip install edenai
 
 from edenai import Text
