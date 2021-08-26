@@ -51,7 +51,7 @@ def test_explicit_content_detection(api: Vision):
 
 @pytest.mark.skip_internet_tests
 def test_face_detection(api: Vision):
-    result = api.face_detection(providers=["amazon", "ibm"], file=test_img)
+    result = api.face_detection(providers=["amazon", "microsoft"], file=test_img)
 
     assert len(result["Amazon Web Services"]) > 0
 

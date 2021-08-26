@@ -92,7 +92,7 @@ class Vision(ApiBase):
         :returns: dictionary of tuples {"google" : (result), "microsoft" : (result), …}
         """
         response = post(
-            url=self.get_endpoint_url("object_detection"),
+            url=self.get_endpoint_url("face_detection"),
             headers=self.post_headers,
             payload={"providers": str(providers)},
             files=file,
