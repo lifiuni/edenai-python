@@ -1,6 +1,6 @@
 # Explicit content detection is a computer vision technology which allows to detect explicit content on images: violence, pornography, etc. 
 
-pip install edenai
+# pip install edenai
 
 from edenai import Vision
 
