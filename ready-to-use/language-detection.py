@@ -1,6 +1,6 @@
 # Language Detection or language guessing is the algorithm of determining which natural language given content is in.
 
-pip install edenai
+# pip install edenai
 
 from edenai import Translation
 
